@@ -1,0 +1,65 @@
+body {
+  font-family: 'Questrial', sans-serif;
+  color: #ffffff; 
+  padding-top: 0px;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #ffffff;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #ffffff;
+}
+
+div.scroll-btn {
+  position: absolute;
+  left: 95%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+div.scroll-btn-up {
+  top: 15%;
+}
+
+div.scroll-btn-down {
+  bottom: 10%;
+}
+
+div.page {
+  position: relative;
+  min-height: 100vh;
+
+}
+
+div.con {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+div.con-one {
+  top: 50%;
+}
+
+div.con-two {
+  top: 45%;
+}
+
+div.one{
+  background: url("../img/bg1.jpg") center center;
+
+}
+
+div.two{
+  background: url("../img/bg2.jpg") center center;
+}
+
+img.thumb {
+  border-radius: 75px;
+  height: 150px;
+  width: 150px;
+}
+
