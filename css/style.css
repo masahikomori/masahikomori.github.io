@@ -4,71 +4,48 @@ body {
   padding-top: 0px;
 }
 
-.navbar-inverse .navbar-brand {
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a, a:link, a:visited, a:hover, a:active {
   color: #ffffff;
 }
 
-a:link, a:visited, a:hover, a:active {
-  color: #ffffff;
+.panel {
+  background: none;
+  border: none;
 }
 
-div.scroll-btn {
-  position: absolute;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+.pic-size {
+  width:200px;
+  height:200px;
+  object-fit: cover;
 }
 
-div.scroll-btn-up {
-  top: 15%;
-  left: 95%;
+.panel-default>.panel-heading {
+  background-color:transparent;
+  border: none;
+  border-color: transparent;
+  color:#FFFFFF;
+  border-style: none;
 }
 
-div.page-title {
-  top: 50%;
-  left: 10%;
-}
-
-div.scroll-btn-down {
-  left: 95%;
-  bottom: 5%;
+.panel-footer-ext {
+  background-color:transparent;
+  color:#FFFFFF;
+  border-bottom: none;
 }
 
 div.page {
-  position: relative;
   min-height: 100vh;
+  padding-top: 80px;
 }
 
-div.con {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-div.con-one {
-  top: 50%;
-}
-
-div.con-two {
-  top: 45%;
-}
-
-div.one{
-  background: url("../img/bg1.jpg") center center;
-
-}
-
-div.two{
-  background: url("../img/bg2.jpg") center center;
-}
-
-div.three{
-  background: url("../img/bg3.jpg") center center;
+div.me {
+  background: url("../img/bg.jpg") center center;
+  background-attachment: fixed;
 }
 
 img.thumb {
-  border-radius: 75px;
-  height: 150px;
-  width: 150px;
+  border-radius: 60px;
+  height: 120px;
+  width: 120px;
 }
 

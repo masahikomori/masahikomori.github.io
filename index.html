@@ -10,119 +10,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <title>masahikomori.github.io</title>
+  <title id="title">{{text}}</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" rel="stylesheet" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
   <link href="./css/style.css" rel="stylesheet"/>
 </head>
 <body id="top">
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="#top">masahikomori.github.io</a>
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
-      <span class="sr-only">メニュー</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button> 
-  </div>
-  <div id="gnavi" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
-      <li><a href="#top">home</a></li>
-      <li><a href="#me">me</a></li>
-      <li><a href="#work">work</a></li>
-    </ul>
-  </div>
-</nav>
+<div id="navigation">
+  <elem></elem>
+</div><!-- navigation -->
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12 one">
-
-      <div class="page">
-        <div class="con con-one">
-          <h2 class="text-center">masahikomori.github.io</h2>
-        </div><!-- con -->
-        <div class="scroll-btn scroll-btn-down">
-          <p><a href="#me"><i class="fa fa-3x fa-angle-down"></i></a></p>
-        </div><!-- scroll button -->
-      </div><!-- page -->
-
-    </div><!-- col -->
-  </div><!-- row -->
-
-  <div class="row" id="me">
-    <div class="col-md-12 two">
-      
-      <div class="page">
-        <div class="scroll-btn page-title">
-          <p style="font-size:2em;">me</p>
-        </div><!-- scroll button -->
-        <div class="scroll-btn scroll-btn-up">
-          <p><a href="#top"><i class="fa fa-3x fa-angle-up"></i></a></p>
-        </div><!-- scroll button -->
-
-        <div class="con con-two">
-          <div class="text-center">
-            <img src="https://avatars0.githubusercontent.com/u/35749284?s=460&v=4" class="thumb"/>
+    <div class="page me">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center">
+              <img src="https://avatars0.githubusercontent.com/u/35749284?s=460&v=4" class="thumb"/>
+              <h3 id="name" style="margin-top:10px;">{{text}}</h3>
+              <p id="profile">{{text}}</p>
+              <p>
+                <a href="https://github.com/masahikomori" target="_blank"><i class="fab fa-github fa-3x" aria-hidden="true"></i></a>&nbsp;
+                <a href="https://facebook.com/mori082" target="_blank"><i class="fab fa-facebook fa-3x"></i></a>&nbsp;
+                <a href="https://www.linkedin.com/in/masahikomori" target="_blank"><i class="fab fa-linkedin fa-3x" aria-hidden="true"></i></a>
+              </p>
+            </div>
           </div>
-          <div class="text-center">
-            <h3 style="margin-top:10px;">masahiko mori</h3>
-            <p>otaku</p>
-            <p><a href="https://github.com/masahikomori" target="_blank"><i class="fa fa-3x fa-github" aria-hidden="true"></i></a></p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Work</h3>
           </div>
-        </div><!-- con -->
+        </div>
 
-        <div class="scroll-btn scroll-btn-down text-center">
-          <p><a href="#work"><i class="fa fa-3x fa-angle-down"></i></a></p>
-        </div><!-- scroll button -->
+        <div class="row">
+          <div class="col-md-12">
 
-      </div><!-- page -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="panel panel-default panel-ext">
+                <div class="text-center panel-body">
+                  <div class="col-md-12">
+                    <img src="./img/004.jpg" class="img-responsive center-block pic-size"/>
+                  </div>
+                </div>
+                <div class="panel-footer panel-footer-ext">
+                  <h3 class="panel-title text-right">Raspberry Pi</h3>
+                </div>
+              </div>
+            </div>
 
-    </div><!-- col -->
-  </div><!-- row -->
 
-  <div class="row" id="work">
-    <div class="col-md-12 three">
-      
-      <div class="page">
-        <div class="scroll-btn page-title">
-          <p style="font-size:2em;">work</p>
-        </div><!-- scroll button -->
-        <div class="scroll-btn scroll-btn-up">
-          <p><a href="#me"><i class="fa fa-3x fa-angle-up"></i></a></p>
-        </div><!-- scroll button -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="panel panel-default panel-ext">
+                <div class="text-center panel-body">
+                  <div class="col-md-12">
+                    <a href="https://www.facebook.com/mori082/videos/1112489462159272/" target="_blank"><img src="./img/003.png" class="img-responsive center-block pic-size"/></a>
+                  </div>
+                </div>
+                <div class="panel-footer panel-footer-ext">
+                  <h3 class="panel-title text-right">Raspberry Pi</h3>
+                </div>
+              </div>
+            </div>
 
-        <div class="con con-two">
-        </div><!-- con -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="panel panel-default panel-ext">
+                <div class="text-center panel-body">
+                  <div class="col-md-12">
+                    <a href="https://www.facebook.com/mori082/videos/1089355767805975/" target="_blank"><img src="./img/002.png" class="img-responsive center-block pic-size"/></a>
+                  </div>
+                </div>
+                <div class="panel-footer panel-footer-ext">
+                  <h3 class="panel-title text-right">Raspberry Pi</h3>
+                </div>
+              </div>
+            </div>
 
-        <div class="scroll-btn scroll-btn-down">
-          <p><a href="#top"><i class="fa fa-3x fa-angle-double-up"></i></a></p>
-        </div><!-- scroll button -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="panel panel-default panel-ext">
+                <div class="text-center panel-body">
+                  <div class="col-md-12">
+                    <a href="https://www.facebook.com/photo.php?fbid=1008791795862373&set=a.822499041158317.1073741825.100001946850493&type=3&theater&viewas=100000686899395" target="_blank"><img src="./img/001.jpg" class="img-responsive center-block pic-size"/></a>
+                  </div>
+                </div>
+                <div class="panel-footer panel-footer-ext">
+                  <h3 class="panel-title text-right">Web</h3>
+                </div>
+              </div>
+            </div>
 
-      </div><!-- page -->
 
-    </div><!-- col -->
-  </div><!-- row -->
 
+
+
+
+
+          </div><!-- col -->
+        </div><!-- row -->
+      </div>
+    </div>  
+  </div>
 </div><!-- container -->
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-  $(function(){
-    $('a[href^="#"]').click(function(){
-      var speed = 500;
-      var href= $(this).attr("href");
-      var target = $(href == "#" || href == "" ? 'html' : href);
-      var position = target.offset().top;
-      $("html, body").animate({scrollTop:position}, speed, "swing");
-      return false;
-    });
-  });
-</script>
+<script src="./js/default.js"></script>
 </body>
 </html>
-
-
