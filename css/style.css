@@ -1,46 +1,25 @@
 body {
   font-family: 'Questrial', sans-serif;
   color: #ffffff; 
-  padding-top: 0px;
+  padding-top: 80px;
+  background: url("../img/bg.jpg") center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a, a:link, a:visited, a:hover, a:active {
   color: #ffffff;
 }
 
-.panel {
-  background: none;
-  border: none;
-}
-
 .pic-size {
-  width:200px;
-  height:200px;
+  width:286px;
+  height:180px;
   object-fit: cover;
 }
 
-.panel-default>.panel-heading {
-  background-color:transparent;
-  border: none;
-  border-color: transparent;
-  color:#FFFFFF;
-  border-style: none;
-}
-
-.panel-footer-ext {
-  background-color:transparent;
-  color:#FFFFFF;
-  border-bottom: none;
-}
-
-div.page {
-  min-height: 100vh;
-  padding-top: 80px;
-}
-
-div.me {
-  background: url("../img/bg.jpg") center center;
-  background-attachment: fixed;
+.bottom-margin {
+  margin-bottom: 2.5em;
 }
 
 img.thumb {
@@ -49,6 +28,3 @@ img.thumb {
   width: 120px;
 }
 
-.profile {
-  margin-bottom: 1em;
-}

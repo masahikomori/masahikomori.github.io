@@ -1,6 +1,7 @@
  $(function () {
   var strName = 'masahiko mori'
-  var strProfile = 'From Yokogawa Sta, Hiroshima Japan.'
+  var strProfile_1 = 'Otaku'
+  var strProfile_2 = 'Yokogawa, Hiroshima Japan.'
   var strTitle = 'masahikomori.github.io'
   var apiUrl = 'https://api.github.com/users/masahikomori'
   var dt = new Date();
@@ -25,7 +26,7 @@
 
   // Footer
   var footerElem = Vue.extend({
-    template: '<p class="text-muted text-center">&copy;&nbsp;'+ dt.getFullYear() + '&nbsp;' + strName + '</p>'
+    template: '<p class="text-center">&copy;&nbsp;'+ dt.getFullYear() + '&nbsp;' + strName + '</p>'
   })
 
   Vue.component('elem', footerElem)
@@ -38,8 +39,13 @@
       data:{text:strName}
   })
 
-  var profile = new Vue({
-    el:'#profile',
-      data:{text:strProfile}
+  var profile_1 = new Vue({
+    el:'#profile_1',
+      data:{text:strProfile_1}
+  })
+
+  var profile_2 = new Vue({
+    el:'#profile_2',
+      data:{text:strProfile_2}
   })
 });
