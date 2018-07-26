@@ -1,51 +1,63 @@
- $(function () {
-  var strName = 'masahiko mori'
-  var strProfile_1 = 'Otaku'
-  var strProfile_2 = 'Yokogawa, Hiroshima Japan.'
-  var strTitle = 'masahikomori.github.io'
-  var apiUrl = 'https://api.github.com/users/masahikomori'
+$(function () {
+  var apiUrl = "https://api.github.com/users/masahikomori";
+  var name = "masahikomori.github.io";
   var dt = new Date();
+
+  var content = new Vue({
+    el: '#content',
+    data: {
+      items: []
+    },
+    beforeCreate: function () {
+      axios.get('./content/content.json')
+          .then(function (response) {
+            content.items = response.data;
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+    }
+  })
+
+  var user = new Vue({
+    el:"#user",
+    data:{
+      lists:[]
+    }
+  });
+
+  // GitHub user info
+  $.get(apiUrl).then(function (lists) {
+    user.lists = lists;
+  });
 
   // Title
   var title = new Vue({
-    el:'#title',
-      data:{text:strTitle}
-  })
+    el:"#title",
+      data:{text:name}
+  });
   
   // Navigation bar
   var navbarElem = Vue.extend({
-    template: '<nav class="navbar navbar-inverse navbar-fixed-top">' +
-              '<div class="navbar-header"><a class="navbar-brand">' +
-              '<div id="nav-title">' + strTitle + '</div></a></div></nav>'
-  })
+    template: "<nav class='navbar navbar-inverse navbar-fixed-top'>" +
+              "<div class='navbar-header'><a class='navbar-brand'>" +
+              "<div id='nav-title'>" +
+              name +
+              "</div></a></div></nav>"
+  });
 
-  Vue.component('elem', navbarElem)
+  Vue.component("elem", navbarElem)
   var navigation = new Vue({
-    el: '#navigation',
-  })
+    el: "#navigation",
+  });
 
   // Footer
   var footerElem = Vue.extend({
-    template: '<p class="text-center">&copy;&nbsp;'+ dt.getFullYear() + '&nbsp;' + strName + '</p>'
-  })
+    template: "<p class='text-center'>&copy;&nbsp;"+ dt.getFullYear() + "&nbsp;" + name + "</p>"
+  });
 
-  Vue.component('elem', footerElem)
+  Vue.component("elem", footerElem)
   var footer = new Vue({
-    el: '#footer'
-  })
-
-  var name = new Vue({
-    el:'#name',
-      data:{text:strName}
-  })
-
-  var profile_1 = new Vue({
-    el:'#profile_1',
-      data:{text:strProfile_1}
-  })
-
-  var profile_2 = new Vue({
-    el:'#profile_2',
-      data:{text:strProfile_2}
-  })
+    el: "#footer"
+  });
 });

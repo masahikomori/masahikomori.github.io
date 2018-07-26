@@ -12,14 +12,23 @@ body {
   color: #ffffff;
 }
 
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-margin {
+  margin-bottom: 2em;
+}
+
 .pic-size {
-  width:286px;
-  height:180px;
+  width: 286px;
+  height: 180px;
   object-fit: cover;
 }
 
 .bottom-margin {
-  margin-bottom: 2.5em;
+  margin-bottom: 1.5em;
 }
 
 img.thumb {
@@ -27,4 +36,3 @@ img.thumb {
   height: 120px;
   width: 120px;
 }
-

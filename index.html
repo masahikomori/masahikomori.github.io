@@ -8,15 +8,16 @@
   <meta content="masahikomori.github.io" name="Description" />
   <meta content="masahikomori" name="Author" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <title id="title">{{text}}</title>
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon" /> 
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" rel="stylesheet" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
   <link href="./css/style.css" rel="stylesheet"/>
 </head>
-<body id="top">
+<body>
 
 <div id="navigation">
   <elem></elem>
@@ -25,74 +26,37 @@
 <div class="container">
 
   <div class="row bottom-margin">
-    <div class="col-md-12">
-      <div class="text-center">
-        <img src="https://avatars0.githubusercontent.com/u/35749284?s=460&v=4" class="thumb"/>
-        <h3 id="name">{{text}}</h3>
-        <p id="profile_1">{{text}}</p>
-        <p id="profile_2">{{text}}</p>
-        <p>
-          <a href="https://github.com/masahikomori" target="_blank"><i class="fab fa-github fa-3x" aria-hidden="true"></i></a>&nbsp;
-          <a href="https://facebook.com/mori082" target="_blank"><i class="fab fa-facebook fa-3x"></i></a>&nbsp;
-          <a href="https://www.linkedin.com/in/masahikomori" target="_blank"><i class="fab fa-linkedin fa-3x" aria-hidden="true"></i></a>
-        </p>
-      </div>
+    <div class="col-md-12 text-center" id="user">
+      <img v-bind:src="lists.avatar_url" class="thumb"/>
+      <h3 id="name">{{lists.name}}</h3>
+      <p>{{lists.location}}</p>
+      <p>{{lists.bio}}</p>
+      <p>{{lists.company}}</p>
+      <p>
+        <a href="https://github.com/masahikomori" target="_blank"><i class="fab fa-github fa-3x" aria-hidden="true"></i></a>&nbsp;
+        <a href="https://facebook.com/mori082" target="_blank"><i class="fab fa-facebook fa-3x"></i></a>&nbsp;
+        <a href="https://www.linkedin.com/in/masahikomori" target="_blank"><i class="fab fa-linkedin fa-3x" aria-hidden="true"></i></a>
+      </p>
     </div>
   </div>
 
-
-  <div class="row" style="display: flex;flex-wrap: wrap;">
-
-    <div class="card col-md-3 col-sm-6 col-xs-12 card-margin">
-      <img class="card-img-top img-responsive center-block pic-size" src="https://user-images.githubusercontent.com/35749284/43217183-e6517246-907b-11e8-89cd-0d92dc0f0f1f.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">クソカメラ</h5>
-        <p class="card-text">Raspberry Piのケースに固定したCherry MXキーを押すと撮影します。撮影したデータはモニタに接続するかSSH接続しないと確認できないクソ仕様。</p>
+  <div class="row" class="card-row" id="content">
+    <div v-for="item in items.list">
+      <div class="card col-md-3 col-sm-6 col-xs-12 card-margin">
+        <img class="card-img-top img-responsive center-block pic-size" v-bind:src="item.icon"/>
+        <div class="card-body">
+          <h5 class="card-title">{{item.head}}</h5>
+          <p class="card-text">{{item.detail}}</p>
+          <div v-if="item.btn1 != ''" style="display: inline;">
+            <a v-bind:href="item.btn1" class="btn btn-primary" target="_blank">More</a>
+          </div>
+          <div v-if="item.btn2 != ''" style="display: inline;">
+            <a v-bind:href="item.btn2" class="btn btn-primary" target="_blank">Detail</a>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="card col-md-3 col-sm-6 col-xs-12 card-margin">
-      <img class="card-img-top img-responsive center-block pic-size" src="https://user-images.githubusercontent.com/35749284/43217182-e6253af0-907b-11e8-8acc-a6c82d9e2946.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">LCD</h5>
-        <p class="card-text">BME280を使用して取得した温度、湿度、気圧をLCDに表示させました。</p>
-        <a href="https://www.facebook.com/mori082/videos/1112489462159272/" class="btn btn-primary" target="_blank">More</a>
-      </div>
-    </div>
-
-    <div class="card col-md-3 col-sm-6 col-xs-12 card-margin">
-      <img class="card-img-top img-responsive center-block pic-size" src="https://user-images.githubusercontent.com/35749284/43217181-e5fd1b92-907b-11e8-8a94-92c77d5496b1.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Motion</h5>
-        <p class="card-text">Raspberry PiカメラモジュールとPIRモーションセンサーを使用した監視カメラ。撮影したデータはAWSを使用して保管、通知メールも送信されます。</p>
-        <a href="https://www.facebook.com/mori082/videos/1089355767805975/" class="btn btn-primary" target="_blank">More</a>
-        <a href="https://user-images.githubusercontent.com/35749284/43217044-84825454-907b-11e8-8685-99949d09b4a9.png" class="btn btn-primary" target="_blank">Detail</a>
-      </div>
-    </div>
-
-    <div class="card col-md-3 col-sm-6 col-xs-12 card-margin">
-      <img class="card-img-top img-responsive center-block pic-size" src="https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/1917315_1008791795862373_7364040676487647623_n.jpg?_nc_cat=0&oh=d2db10ecc024637f5ef00660775a0e84&oe=5BD6D401" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Web</h5>
-        <p class="card-text">BME280を使用して取得した温度、湿度、気圧をAWS上のRDSで管理、EC2上のWebサーバーに表示させました。グラフはGoogle Chart APIを使用。</p>
-        <a href="https://www.facebook.com/photo.php?fbid=1008791795862373&set=a.822499041158317.1073741825.100001946850493&type=3&theater&viewas=100000686899395" class="btn btn-primary" target="_blank">More</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="row">
-
-    <div class="card col-md-3 col-sm-6 col-xs-12 card-margin">
-      <img class="card-img-top img-responsive center-block pic-size" src="https://user-images.githubusercontent.com/35749284/43217180-e5b863f8-907b-11e8-8572-9cb2786a9383.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">LIRC</h5>
-        <p class="card-text">リモコン受光モジュール、赤外線LEDを使用して部屋の照明を操作しました。</p>
-        <a href="https://www.facebook.com/mori082/videos/980282195380000/" class="btn btn-primary" target="_blank">More</a>
-      </div>
-    </div>
-
-  </div>
+  </div><!-- row -->
 
   <footer id="footer" class="bottom-margin">
     <elem></elem>
@@ -102,6 +66,7 @@
 </div><!-- container -->
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="./js/default.js"></script>
