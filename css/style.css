@@ -17,6 +17,10 @@ body {
   flex-wrap: wrap;
 }
 
+.card-header-margin {
+  margin-bottom: 1em;
+}
+
 .card-margin {
   margin-bottom: 2em;
 }

@@ -14,6 +14,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" rel="stylesheet" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css" rel="stylesheet"/>
   <link href="./css/style.css" rel="stylesheet"/>
 </head>
 <body>
@@ -24,7 +25,7 @@
 
 <div class="container">
 
-  <div class="row bottom-margin">
+  <div class="row">
     <div class="col-md-12 text-center" id="user">
       <img v-bind:src="lists.avatar_url" class="thumb"/>
       <h3 id="name">{{lists.name}}</h3>
@@ -32,17 +33,22 @@
       <p>{{lists.bio}}</p>
       <p>{{lists.company}}</p>
       <p>
-        <a href="https://github.com/masahikomori" target="_blank"><i class="fab fa-github fa-3x" aria-hidden="true"></i></a>&nbsp;
-        <a href="https://facebook.com/mori082" target="_blank"><i class="fab fa-facebook fa-3x"></i></a>&nbsp;
+        <a href="https://github.com/masahikomori" target="_blank"><i class="fab fa-github fa-3x" aria-hidden="true"></i></a>&nbsp;&nbsp;
+        <a href="https://facebook.com/mori082" target="_blank"><i class="fab fa-facebook fa-3x"></i></a>&nbsp;&nbsp;
         <a href="https://www.linkedin.com/in/masahikomori" target="_blank"><i class="fab fa-linkedin fa-3x" aria-hidden="true"></i></a>
       </p>
     </div>
   </div>
-
+ 
   <div class="row" class="card-row" id="content">
+    <div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-10 col-xs-offset-1 card-header-margin">
+      <h3>Activity</h3>
+    </div>  
     <div v-for="item in items.list">
-      <div class="card col-md-3 col-sm-6 col-xs-12 card-margin">
-        <img class="card-img-top img-responsive center-block pic-size" v-bind:src="item.icon"/>
+      <div class="card col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1 card-margin">
+        <a v-bind:href="item.icon" data-lightbox="list">
+          <img class="card-img-top img-responsive center-block pic-size" v-bind:src="item.icon"/>
+        </a>
         <div class="card-body">
           <h5 class="card-title">{{item.head}}</h5>
           <p class="card-text">{{item.detail}}</p>
@@ -50,7 +56,7 @@
             <a v-bind:href="item.btn1" class="btn btn-primary" target="_blank">More</a>
           </div>
           <div v-if="item.btn2 != ''" style="display: inline;">
-            <a v-bind:href="item.btn2" class="btn btn-primary" target="_blank">Detail</a>
+            <a v-bind:href="item.btn2" class="btn btn-primary" data-lightbox="list">Detail</a>
           </div>
         </div>
       </div>
@@ -68,6 +74,7 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
 <script src="./js/default.js"></script>
 </body>
 </html>
