@@ -55,9 +55,17 @@
           <div v-if="item.btn1 != ''" style="display: inline;">
             <a v-bind:href="item.btn1" class="btn btn-primary" target="_blank">More</a>
           </div>
+          <div v-else style="display: inline;">
+            <a v-bind:href="item.btn1" class="btn btn-primary" target="_blank" style="visibility:hidden;">More</a>
+          </div>
+         
           <div v-if="item.btn2 != ''" style="display: inline;">
             <a v-bind:href="item.btn2" class="btn btn-primary" data-lightbox="list">Detail</a>
           </div>
+          <div v-else style="display: inline;">
+            <a v-bind:href="item.btn2" class="btn btn-primary" data-lightbox="list" style="visibility:hidden;">Detail</a>
+          </div>
+
         </div>
       </div>
     </div>
