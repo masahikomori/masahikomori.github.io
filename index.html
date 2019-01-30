@@ -1,4 +1,4 @@
-<!DOCCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta content="masahikomori.github.io" name="Description" />
   <meta content="masahikomori" name="Author" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title id="title">{{text}}</title>
+  <title id="title">masahikomori</title>
   <link rel="icon" href="./img/favicon.ico" type="image/x-icon" /> 
   <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -25,56 +25,92 @@
 
 <div class="container">
 
+  <!-- about -->
   <div class="row">
-    <div class="col-md-12 text-center" id="user">
+    <div class="col-md-12 text-center" id="about">
       <img v-bind:src="lists.avatar_url" class="thumb"/>
-      <h3 id="name">{{lists.name}}</h3>
+      <h3>{{lists.name}}</h3>
       <p>{{lists.bio}}</p>
       <p>{{lists.company}}</p>
       <p>{{lists.location}}</p>
-      <p>
-        <a href="https://github.com/masahikomori" target="_blank"><i class="fab fa-github fa-3x" aria-hidden="true"></i></a>&nbsp;&nbsp;
-        <a href="https://facebook.com/mori082" target="_blank"><i class="fab fa-facebook fa-3x"></i></a>&nbsp;&nbsp;
-        <a href="https://www.linkedin.com/in/masahikomori" target="_blank"><i class="fab fa-linkedin fa-3x" aria-hidden="true"></i></a>
+    </div>
+
+    <!-- Social -->
+    <div class="col-md-12 text-center" id="social">
+      <p v-for="item in items.list" style="display: inline;">
+        <a href="#" v-bind:href="item.url" target="_blank"><i v-bind:class="item.icon" aria-hidden="true"></i></a>&nbsp;
       </p>
+    </div>  
+  </div>
+
+  <div class="row">
+    <!-- Repogitory -->
+    <div class="col-md-4" id="repo">
+      <h3>{{head}}<br><small>{{description}}</small></h3>
+      <ul>
+        <li v-for="(list, index) in lists" v-if="index < 3">
+          <p><a href="#" v-bind:href="list.html_url" target="_blank">{{list.name}}</a>&nbsp;-&nbsp;<small>{{list.description}}</small></p>
+        </li>
+      </ul>
+      <div v-if="lists.length > 3" class="text-right">
+        <a href="#" class="btn btn-info btn-md active" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
+      </div>
+    </div>
+
+    <!-- Gist -->
+    <div class="col-md-4" id="gist">
+      <h3>{{head}}<br><small>{{description}}</small></h3>
+      <ul>
+        <li v-for="(list, index) in lists" v-if="index < 3">
+          <p>{{list.url}}</p>
+        </li>
+      </ul>
+      <div v-if="lists.length > 3" class="text-right">
+        <a href="#" class="btn btn-info btn-md active" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="col-md-4" id="contact">
+      <h3>{{head}}<br><small>{{description}}</small></h3>
+      <p>{{about}}</p>
+      <p><a href="#" v-bind:href="url" class="btn btn-primary" role="button" target="_blank">Contact form</a></p>
     </div>
   </div>
  
-  <div class="row" class="card-row" id="content">
-    <div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-10 col-xs-offset-1 card-header-margin">
-      <h3>Activity</h3>
-    </div>  
-    <div v-for="item in items.list">
-      <div class="card col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1 card-margin">
-        <a v-bind:href="item.icon" data-lightbox="list">
-          <img class="card-img-top img-responsive center-block pic-size" v-bind:src="item.icon"/>
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">{{item.head}}</h5>
-          <p class="card-text">{{item.detail}}</p>
-          <div v-if="item.btn1 != ''" style="display: inline;">
-            <a v-bind:href="item.btn1" class="btn btn-primary" target="_blank">More</a>
+  <div class="row" class="card-row">
+    <div class="col-md-12" id="activity">
+      <h3>{{head}}<br><small>{{description}}</small></h3>
+      <div v-for="item in items.list">
+        <div class="card col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1 card-margin">
+          <a v-bind:href="item.icon" data-lightbox="list">
+            <img class="card-img-top img-responsive center-block pic-size" v-bind:src="item.icon"/>
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">{{item.head}}</h5>
+            <p class="card-text">{{item.detail}}</p>
+            <div v-if="item.btn1 != ''" style="display: inline;">
+              <a v-bind:href="item.btn1" class="btn btn-primary" target="_blank">More</a>
+            </div>
+            <div v-else style="display: inline;">
+              <a v-bind:href="item.btn1" class="btn btn-primary" target="_blank" style="visibility:hidden;">More</a>
+            </div>
+            <div v-if="item.btn2 != ''" style="display: inline;">
+              <a v-bind:href="item.btn2" class="btn btn-primary" data-lightbox="list">Detail</a>
+            </div>
+            <div v-else style="display: inline;">
+              <a v-bind:href="item.btn2" class="btn btn-primary" data-lightbox="list" style="visibility:hidden;">Detail</a>
+            </div>
           </div>
-          <div v-else style="display: inline;">
-            <a v-bind:href="item.btn1" class="btn btn-primary" target="_blank" style="visibility:hidden;">More</a>
-          </div>
-         
-          <div v-if="item.btn2 != ''" style="display: inline;">
-            <a v-bind:href="item.btn2" class="btn btn-primary" data-lightbox="list">Detail</a>
-          </div>
-          <div v-else style="display: inline;">
-            <a v-bind:href="item.btn2" class="btn btn-primary" data-lightbox="list" style="visibility:hidden;">Detail</a>
-          </div>
-
         </div>
       </div>
     </div>
-  </div><!-- row -->
+  </div>
 
-  <footer id="footer" class="bottom-margin">
+  <!-- Footer -->
+  <footer id="footer" class="footer-margin">
     <elem></elem>
   <footer id="footer">
-  </div>
 
 </div><!-- container -->
 
