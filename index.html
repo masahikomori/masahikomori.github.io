@@ -25,8 +25,9 @@
 
 <div class="container">
 
-  <!-- about -->
   <div class="row">
+
+    <!-- about -->
     <div class="col-md-12 text-center" id="about">
       <img v-bind:src="lists.avatar_url" class="thumb"/>
       <h3>{{lists.name}}</h3>
@@ -41,9 +42,11 @@
         <a href="#" v-bind:href="item.url" target="_blank"><i v-bind:class="item.icon" aria-hidden="true"></i></a>&nbsp;
       </p>
     </div>  
-  </div>
+
+  </div><!-- row -->
 
   <div class="row">
+
     <!-- Repogitory -->
     <div class="col-md-4" id="repo">
       <h3>{{head}}<br><small>{{description}}</small></h3>
@@ -78,9 +81,11 @@
       <p>{{about}}</p>
       <p><a href="#" v-bind:href="url" class="btn btn-primary" role="button" target="_blank">Contact form</a></p>
     </div>
-  </div>
+    
+  </div><!-- row -->
  
   <div class="row" class="card-row">
+    <!-- Activity -->
     <div class="col-md-12" id="activity">
       <h3>{{head}}<br><small>{{description}}</small></h3>
       <div v-for="item in items.list">
@@ -107,12 +112,13 @@
         </div>
       </div>
     </div>
-  </div>
+
+  </div><!-- row -->
 
   <!-- Footer -->
   <footer id="footer" class="footer-margin">
     <elem></elem>
-  <footer id="footer">
+  </footer>
 
 </div><!-- container -->
 
