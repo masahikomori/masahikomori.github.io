@@ -52,8 +52,8 @@
           <p><a href="#" v-bind:href="list.html_url" target="_blank">{{list.name}}</a>&nbsp;-&nbsp;<small>{{list.description}}</small></p>
         </li>
       </ul>
-      <div v-if="lists.length > 3" class="text-right">
-        <a href="#" class="btn btn-info btn-md active" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
+      <div v-if="lists.length > 3">
+        <a href="#" class="btn btn-primary btn-md" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
       </div>
     </div>
 
@@ -62,11 +62,13 @@
       <h3>{{head}}<br><small>{{description}}</small></h3>
       <ul>
         <li v-for="(list, index) in lists" v-if="index < 3">
-          <p>{{list.url}}</p>
+          <div v-for='file in list.files'>
+            <p><a href="#" v-bind:href="list.html_url" target="_blank">{{file.filename}}</a>&nbsp;-&nbsp;<small>{{list.description}}</small></p>
+          </div>
         </li>
       </ul>
-      <div v-if="lists.length > 3" class="text-right">
-        <a href="#" class="btn btn-info btn-md active" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
+      <div v-if="lists.length > 3">
+        <a href="#" class="btn btn-primary btn-md" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
       </div>
     </div>
 

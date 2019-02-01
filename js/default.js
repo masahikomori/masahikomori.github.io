@@ -31,14 +31,14 @@ $(function () {
 
   // Social
   var social = new Vue({
-    el: '#social',
+    el: "#social",
     data: {
       head:"SNS",
       description:"SNS",
       items: []
     },
     beforeCreate: function () {
-      axios.get('./content/social.json')
+      axios.get("./content/social.json")
           .then(function (response) {
             social.items = response.data;
           })
@@ -50,14 +50,14 @@ $(function () {
 
   // Activity
   var activity = new Vue({
-    el: '#activity',
+    el: "#activity",
     data: {
       head:"Activity",
       description:"最近の活動",
       items: []
     },
     beforeCreate: function () {
-      axios.get('./content/activity.json')
+      axios.get("./content/activity.json")
           .then(function (response) {
             activity.items = response.data;
           })
@@ -89,12 +89,12 @@ $(function () {
       head:"Gist recent update",
       description:"Gistの更新情報",
       lists:[],
-      more:apiUrl + account + "/gists"
+      more:gistUrl + account
     }
   });
 
   $.get(apiUrl + account + "/gists").then(function (lists) {
-    gist.lists = lists;
+    gists.lists = lists;
   });
 
   // Contact
