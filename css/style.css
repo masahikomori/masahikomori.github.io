@@ -10,6 +10,10 @@ body {
   margin-top : 80px;  
 }
 
+.a {
+  color: #7b8d42;
+}
+
 img.thumb {
   border-radius: 0%;
   height: 200px;
