@@ -3,11 +3,11 @@ body {
 }
 
 .nav {
-background-color: #7b8d42;
+  background-color: #7b8d42;
 }
 
-.container {
-  margin-top : 80px;
+#about {
+  margin-top : 80px;  
 }
 
 img.thumb {
