@@ -1,6 +1,6 @@
 body {
   font-family : 'Questrial', sans-serif;
-  background-color: #FFFAEB;
+  background-color: #FFFFFF;
   color: #452B46;
 }
 
@@ -15,7 +15,7 @@ img.thumb {
 }
 
 #nav {
-  background-color: #7b8d42;
+  background-color: #000000;
 }
 
 #about, #social, #footer {

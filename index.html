@@ -29,8 +29,8 @@
       <div class="col-md-12 text-center">
         <img v-bind:src="lists.avatar_url" class="thumb"/>
       </div>
-      <div class="col-md-12 text-center">
-        <h3>{{lists.name}}</h3>
+      <div class="col-md-4 offset-md-4 ">
+        <h3  class="text-center">{{lists.name}}</h3>
         <p>{{lists.bio}}</p>
         <p>{{lists.company}}</p>
         <p>{{lists.location}}</p>
@@ -39,8 +39,8 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12 text-center">
-      <a href="https://masahikomori.wufoo.com/forms/contact/" class="btn btn-outline-dark btn-md" role="button" aria-pressed="true" v-bind:href="url" target="_blank">Contact</a>
+    <div class="col-md-4 offset-md-4 ">
+      <a href="https://masahikomori.wufoo.com/forms/contact/" class="btn btn-outline-dark btn-md" role="button" aria-pressed="true" v-bind:href="url" target="_blank">contact form</a>
     </div>
   </div>
 
